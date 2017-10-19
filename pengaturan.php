@@ -31,8 +31,8 @@
                 if(isset($_REQUEST['submit'])){
 
                     //validasi form kosong
-                    if ($_REQUEST['institusi'] == "" || $_REQUEST['nama'] == "" || $_REQUEST['status'] == "" || $_REQUEST['alamat'] == "" || $_REQUEST['kepsek'] == "" || $_REQUEST['nip'] == ""
-                        || $_REQUEST['website'] == "" || $_REQUEST['email'] == ""){
+                    if ($_REQUEST['nama'] == "" || $_REQUEST['status'] == "" ||  $_REQUEST['alamat'] == "" ||  $_REQUEST['website'] == "" || $_REQUEST['institusi'] == "" || $_REQUEST['kepala'] == "" || $_REQUEST['nip'] == ""
+                        || $_REQUEST['email'] == ""){
                         $_SESSION['errEmpty'] = 'ERROR! Semua form wajib diisi';
                         header("Location: ././admin.php?page=sett");
                         die();

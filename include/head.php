@@ -284,8 +284,16 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-
+            
+            $("#transaksi li, #agenda li, #pengaturan li, #logout li, #tbl thead, #tbl td a.btn").css('background-color', '#43a047');
+            $("#tbl thead").removeClass();
+            $("#tbl td a.btn").removeClass('blue deep-orange');
+            $(".hijau").css('background-color', '#43a047').removeClass('blue-grey blue deep-orange darken-1');
+            $(".waves-light").css('background-color', '#43a047').removeClass('blue');
+            $(".darken-1, .deep-orange, .blue-grey").css('background-color', '#43a047').removeClass('blue-grey deep-orange blue-grey');
             $("#form11").submit(function(event){
+                
+                //$(".btn.small.blue.waves-effect.waves-light.tooltipped").css('background-color', 'value');
 
                 event.preventDefault();
 
@@ -312,12 +320,12 @@
                         var response = $.parseJSON(response);
 
 
-                        if(response.surat_masuk == "null")
+                        if(response.surat_masuk == null)
                         {
                             alert("Surat Masuk Tidak Ada");
                         }
 
-                        if(response.surat_keluar == "null")
+                        if(response.surat_keluar == null)
                         {
                             alert("Surat Keluar Tidak Ada");
                         }

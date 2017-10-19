@@ -74,10 +74,13 @@
 	
 	<!-- code added by ramdan --> 
 	<div class="row">
-		<div style="height: 500px; width:1000px;">
+		<div style="height: 400px; width:1000px;">
 			<canvas id="canvas_grafik_surat_masuk" height="500" width="1000">Tekan tombol cetak untuk menampilkan grafik</canvas>
 		</div>		
-		<div style="height: 500px; width:1000px;">
+	</div>
+    
+	<div class="row" style="margin: 120px 0 120px 0;">
+		<div style="height: 400px; width:1000px;">
 			<canvas id="canvas_grafik_surat_keluar" height="500" width="1000">Tekan tombol cetak untuk menampilkan grafik</canvas>
 		</div>
 	</div>

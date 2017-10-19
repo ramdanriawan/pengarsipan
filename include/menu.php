@@ -37,8 +37,8 @@
                         <a class="collapsible-header"><i class="material-icons">account_circle</i><?php echo $_SESSION['nama']; ?></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="?page=pro">Profil</a></li>
-                                <li><a href="?page=pro&sub=pass">Ubah Password</a></li>
+                                <li><a href="admin.php?page=pro">Profil</a></li>
+                                <li><a href="admin.php?page=pro&sub=pass">Ubah Password</a></li>
                                 <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </div>
@@ -54,8 +54,8 @@
                         <a class="collapsible-header"><i class="material-icons">repeat</i> Transaksi Surat</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="?page=tsm">Surat Masuk</a></li>
-                                <li><a href="?page=tsk">Surat Keluar</a></li>
+                                <li><a href="admin.php?page=tsm">Surat Masuk</a></li>
+                                <li><a href="admin.php?page=tsk">Surat Keluar</a></li>
                             </ul>
                         </div>
                    </li>
@@ -70,8 +70,8 @@
                         <a class="collapsible-header"><i class="material-icons">assignment</i> Buku Agenda</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="?page=asm">Surat Masuk</a></li>
-                                <li><a href="?page=ask">Surat Keluar</a></li>
+                                <li><a href="admin.php?page=asm">Surat Masuk</a></li>
+                                <li><a href="admin.php?page=ask">Surat Keluar</a></li>
                             </ul>
                         </div>
                     </li>
@@ -83,8 +83,8 @@
                         <a class="collapsible-header"><i class="material-icons">image</i> Galeri File</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="?page=gsm">Surat Masuk</a></li>
-                                <li><a href="?page=gsk">Surat Keluar</a></li>
+                                <li><a href="admin.php?page=gsm">Surat Masuk</a></li>
+                                <li><a href="admin.php?page=gsk">Surat Keluar</a></li>
                             </ul>
                         </div>
                     </li>
@@ -99,8 +99,8 @@
                         <a class="collapsible-header"><i class="material-icons">settings</i> Pengaturan</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="?page=sett">Instansi</a></li>
-                                <li><a href="?page=sett&sub=usr">User</a></li>
+                                <li><a href="admin.php?page=sett">Instansi</a></li>
+                                <li><a href="admin.php?page=sett&sub=usr">User</a></li>
                               </ul>
                         </div>
                     </li>
@@ -115,8 +115,8 @@
                         <a class="collapsible-header"><i class="material-icons">settings</i> Pengaturan</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="?page=sett">Instansi</a></li>
-                                <li><a href="?page=sett&sub=usr">User</a></li>
+                                <li><a href="admin.php?page=sett">Instansi</a></li>
+                                <li><a href="admin.php?page=sett&sub=usr">User</a></li>
                             </ul>
                         </div>
                     </li>
@@ -137,29 +137,29 @@
                 if($_SESSION['admin'] == 1 || $_SESSION['admin'] == 3){ ?>
             <li><a class="dropdown-button" href="#!" data-activates="transaksi">Transaksi Surat <i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='transaksi' class='dropdown-content'>
-                    <li><a href="?page=tsm">Surat Masuk</a></li>
-                    <li><a href="?page=tsk">Surat Keluar</a></li>
+                    <li><a href="admin.php?page=tsm">Surat Masuk</a></li>
+                    <li><a href="admin.php?page=tsk">Surat Keluar</a></li>
                 </ul>
             <?php
                 }
             ?>
             <li><a class="dropdown-button" href="#!" data-activates="agenda">Buku Agenda <i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='agenda' class='dropdown-content'>
-                    <li><a href="?page=asm">Surat Masuk</a></li>
-                    <li><a href="?page=ask">Surat Keluar</a></li>
+                    <li><a href="admin.php?page=asm">Surat Masuk</a></li>
+                    <li><a href="admin.php?page=ask">Surat Keluar</a></li>
                 </ul>
             <li><a class="dropdown-button" href="#!" data-activates="agenda">Galeri File <i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='agenda' class='dropdown-content'>
-                    <li><a href="?page=gsm">Surat Masuk</a></li>
-                    <li><a href="?page=gsk">Surat Keluar</a></li>
+                    <li><a href="admin.php?page=gsm">Surat Masuk</a></li>
+                    <li><a href="admin.php?page=gsk">Surat Keluar</a></li>
                 </ul>
             
             <?php
                 if($_SESSION['admin'] == 1): ?>
             <li><a class="dropdown-button" href="#!" data-activates="pengaturan">Pengaturan <i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='pengaturan' class='dropdown-content'>
-                    <li><a href="?page=sett">Instansi</a></li>
-                    <li><a href="?page=sett&sub=usr">User</a></li>
+                    <li><a href="admin.php?page=sett">Instansi</a></li>
+                    <li><a href="admin.php?page=sett&sub=usr">User</a></li>
                     <li class="divider"></li>
                   
                     
@@ -169,8 +169,8 @@
                 if($_SESSION['admin'] == 2){ ?>
             <li><a class="dropdown-button" href="#!" data-activates="pengaturan">Pengaturan <i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='pengaturan' class='dropdown-content'>
-                    <li><a href="?page=sett">Instansi</a></li>
-                    <li><a href="?page=sett&sub=usr">User</a></li>
+                    <li><a href="admin.php?page=sett">Instansi</a></li>
+                    <li><a href="admin.php?page=sett&sub=usr">User</a></li>
                 </ul>
             <?php
                 }
@@ -184,8 +184,8 @@
 
             <li class="right" style="margin-right: 10px;"><a class="dropdown-button" href="#!" data-activates="logout"><i class="material-icons">account_circle</i> <?php echo $_SESSION['nama']; ?><i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='logout' class='dropdown-content'>
-                    <li><a href="?page=pro">Profil</a></li>
-                    <li><a href="?page=pro&sub=pass">Ubah Password</a></li>
+                    <li><a href="admin.php?page=pro">Profil</a></li>
+                    <li><a href="admin.php?page=pro&sub=pass">Ubah Password</a></li>
                     <li class="divider"></li>
                     <li><a href="logout.php"><i class="material-icons">settings_power</i> Logout</a></li>
                 </ul>

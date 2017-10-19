@@ -21,7 +21,7 @@ while ($row2 = $query2->fetch(PDO::FETCH_OBJ)) {
 $dataasli["surat_masuk"] = $data1;
 $dataasli["surat_keluar"] = $data2;
 
-if($dataasli["surat_masuk"] === null || $dataasli["surat_keluar"] === null)
+if($dataasli["surat_masuk"] === null && $dataasli["surat_keluar"] === null)
 {
 	die("false");
 }

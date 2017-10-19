@@ -47,7 +47,7 @@
                     <div class="col s12">
                         <div class="z-depth-1">
                             <nav class="secondary-nav">
-                                <div class="nav-wrapper blue-grey  darken-1">
+                                <div class="nav-wrapper blue-grey  darken-1 hijau">
                                     <div class="col m7">
                                         <ul class="left">
                                             <li class="waves-effect waves-light hide-on-small-only"><a href="?page=tsk" class="judul"><i class="material-icons">drafts</i> Surat Keluar</a></li>
@@ -151,7 +151,7 @@
                                     $no = 1;
                                     while($row = mysqli_fetch_array($query)){
                                       echo '
-                                        <td>'.$row['no_agenda'].'<br/><hr/>'.$row['kode'].'</td>
+                                        <td>'.$row['no_agenda'].'<br/><hr/>'.$row['input'].'</td>
                                         <td>'.substr($row['isi'],0,200).'<br/><br/><strong>File :</strong>';
 
                                         if(!empty($row['file'])){
@@ -327,7 +327,7 @@
                                 $no = 1;
                                 while($row = mysqli_fetch_array($query)){
                                   echo '
-                                    <td>'.$row['no_agenda'].'<br/><hr/>'.$row['kode'].'</td>
+                                    <td>'.$row['no_agenda'].'<br/><hr/>'.$row['input'].'</td>
                                     <td>'.substr($row['isi'],0,200).'<br/><br/><strong>File :</strong>';
 
                                     if(!empty($row['file'])){

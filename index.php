@@ -184,7 +184,7 @@
                     <!-- Logo and title START -->
                     <div class="col s12">
                         <div class="card-content">
-                            <h5 class="center" id="title">Dokumentasi Dan Disposisi Surat</h5>
+                            <h5 class="center" id="title">Sistem Informasi Pengarsipan Surat Masuk Dan Keluar</h5>
                             <?php
                                 if(!empty($data['logo'])){
                                     echo '<img id="logo" src="./upload/'.$data['logo'].'"/>';

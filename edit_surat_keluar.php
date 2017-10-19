@@ -215,7 +215,7 @@
                             <div class="input-field col s6 tooltipped" data-position="top" data-tooltip="Isi dengan angka">
                                 <input type="hidden" name="id_surat" value="<?php echo $id_surat ;?>">
                                 <i class="material-icons prefix md-prefix">looks_one</i>
-                                <input id="no_agenda" type="number" class="validate" name="no_agenda" value="<?php echo $no_agenda ;?>" required>
+                                <input id="no_agenda" type="number" class="validate" name="no_agenda" value="<?php echo $no_agenda ;?>" required min="1">
                                     <?php
                                         if(isset($_SESSION['no_agendak'])){
                                             $no_agendak = $_SESSION['no_agendak'];

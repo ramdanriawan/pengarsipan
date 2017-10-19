@@ -83,7 +83,7 @@
                                     <div class="nav-wrapper blue-grey darken-1">
                                         <div class="col 12">
                                             <ul class="left">
-                                                <li class="waves-effect waves-light"><a href="?page=ask" class="judul"><i class="material-icons">print</i> Cetak Agenda Surat Keluar<a></li>
+                                                <li class="waves-effect waves-light hijau"><a href="?page=ask" class="judul"><i class="material-icons">print</i> Cetak Agenda Surat Keluar<a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                                 <label for="sampai_tanggal">Sampai Tanggal</label>
                             </div>
                             <div class="col s6">
-                                <button type="submit" name="submit" class="btn-large blue waves-effect waves-light"> TAMPILKAN <i class="material-icons">visibility</i></button>
+                                <button type="submit" name="submit" class="btn-large blue waves-effect waves-light hijau"> TAMPILKAN <i class="material-icons">visibility</i></button>
                             </div>
                         </form>
                     </div>
@@ -213,7 +213,7 @@
                             <p class="warna agenda">Agenda Surat Keluar dari tanggal <strong>'.$d." ".$nm." ".$y.'</strong> sampai dengan tanggal <strong>'.$d2." ".$nm2." ".$y2.'</strong></p>
                         </div>
                         <div class="col s2">
-                            <button type="submit" onClick="window.print()" class="btn-large deep-orange waves-effect waves-light right">CETAK <i class="material-icons">print</i></button>
+                            <button type="submit" onClick="window.print()" class="btn-large deep-orange waves-effect waves-light hijau right">CETAK <i class="material-icons">print</i></button>
                         </div>
                     </div>
                     <div id="colres" class="warna cetak">
@@ -307,10 +307,10 @@
                     <div class="col s12">
                         <div class="z-depth-1">
                             <nav class="secondary-nav">
-                                <div class="nav-wrapper blue-grey darken-1">
+                                <div class="nav-wrapper blue-grey darken-1 hijau">
                                     <div class="col 12">
                                         <ul class="left">
-                                            <li class="waves-effect waves-light"><a href="?page=ask" class="judul"><i class="material-icons">print</i> Cetak Agenda Surat Keluar<a></li>
+                                            <li class="waves-effect waves-light hijau"><a href="?page=ask" class="judul"><i class="material-icons">print</i> Cetak Agenda Surat Keluar<a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -335,7 +335,7 @@
                             <label for="sampai_tanggal">Sampai Tanggal</label>
                         </div>
                         <div class="col s6">
-                            <button type="submit" name="submit" class="btn-large blue waves-effect waves-light"> TAMPILKAN <i class="material-icons">visibility</i></button>
+                            <button type="submit" name="submit" class="btn-large blue waves-effect waves-light hijau"> TAMPILKAN <i class="material-icons">visibility</i></button>
                         </div>
                     </form>
                 </div>

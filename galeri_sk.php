@@ -32,10 +32,10 @@
                         <div class="col s12">
                             <div class="z-depth-1">
                                 <nav class="secondary-nav">
-                                    <div class="nav-wrapper blue-grey darken-1">
+                                    <div class="nav-wrapper blue-grey darken-1 hijau">
                                         <div class="col m12">
                                             <ul class="left">
-                                                <li class="waves-effect waves-light"><a href="?page=gsk" class="judul"><i class="material-icons">image</i> Galeri File Surat Keluar</a></li>
+                                                <li class="waves-effect waves-light hijau"><a href="?page=gsk" class="judul"><i class="material-icons">image</i> Galeri File Surat Keluar</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -75,9 +75,9 @@
                                         <label for="sampai_tanggal">Sampai Tanggal</label>
                                     </div>
                                     <div class="col s6">
-                                        <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">FILTER <i class="material-icons">filter_list</i></button>&nbsp;&nbsp;
+                                        <button type="submit" name="submit" class="btn-large blue waves-effect waves-light hijau">FILTER <i class="material-icons">filter_list</i></button>&nbsp;&nbsp;
 
-                                        <button type="reset" onclick="window.history.back()" class="btn-large deep-orange waves-effect waves-light">RESET <i class="material-icons">refresh</i></button>
+                                        <button type="reset" onclick="window.history.back()" class="btn-large deep-orange waves-effect waves-light hijau">RESET <i class="material-icons">refresh</i></button>
                                     </div>
                                 </form>
                             </div>
@@ -166,7 +166,7 @@
                                         echo '
                                             <div class="col m3">
                                                 <img class="galeri materialboxed" data-caption="'.date('d M Y', strtotime($row['tgl_catat'])).'" src="./upload/surat_keluar/'.$row['file'].'"/>
-                                                <a class="btn light-green darken-1" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Tampilkan Ukuran Penuh</a>
+                                                <a class="btn light-green darken-1 hijau" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Tampilkan Ukuran Penuh</a>
                                             </div>';
                                     } else {
 
@@ -174,13 +174,13 @@
                                             echo '
                                                 <div class="col m3">
                                                     <img class="galeri materialboxed" data-caption="'.date('d M Y', strtotime($row['tgl_catat'])).'" src="./asset/img/word.png"/>
-                                                    <a class="btn light-green darken-1" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
+                                                    <a class="btn light-green darken-1 hijau" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
                                                 </div>';
                                         } else {
                                             echo '
                                                 <div class="col m3">
                                                     <img class="galeri materialboxed" data-caption="'.date('d M Y', strtotime($row['tgl_catat'])).'" src="./asset/img/pdf.png"/>
-                                                    <a class="btn light-green darken-1" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
+                                                    <a class="btn light-green darken-1 hijau" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
                                                 </div>';
                                         }
                                     }
@@ -218,7 +218,7 @@
                                         <label for="sampai_tanggal">Sampai Tanggal</label>
                                     </div>
                                     <div class="col s6">
-                                        <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">FILTER <i class="material-icons">filter_list</i></button>
+                                        <button type="submit" name="submit" class="btn-large blue waves-effect waves-light hijau">FILTER <i class="material-icons">filter_list</i></button>
                                     </div>
                                 </form>
                             </div>
@@ -240,7 +240,7 @@
                                     echo '
                                         <div class="col m3">
                                             <img class="galeri materialboxed" data-caption="'.date('d M Y', strtotime($row['tgl_catat'])).'" src="./upload/surat_keluar/'.$row['file'].'"/>
-                                            <a class="btn light-green darken-1" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Tampilkan Ukuran Penuh</a>
+                                            <a class="btn light-green darken-1 hijau" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Tampilkan Ukuran Penuh</a>
                                         </div>';
                                     } else {
 
@@ -248,13 +248,13 @@
                                         echo '
                                             <div class="col m3">
                                                 <img class="galeri materialboxed" data-caption="'.date('d M Y', strtotime($row['tgl_catat'])).'" src="./asset/img/word.png"/>
-                                                <a class="btn light-green darken-1" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
+                                                <a class="btn light-green darken-1 hijau" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
                                             </div>';
                                         } else {
                                             echo '
                                                 <div class="col m3">
                                                     <img class="galeri materialboxed" data-caption="'.date('d M Y', strtotime($row['tgl_catat'])).'" src="./asset/img/pdf.png"/>
-                                                    <a class="btn light-green darken-1" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
+                                                    <a class="btn light-green darken-1 hijau" href="?page=gsk&act=fsk&id_surat='.$row['id_surat'].'">Lihat Detail File</a>
                                                 </div>';
                                         }
                                     }

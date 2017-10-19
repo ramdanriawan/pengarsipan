@@ -136,9 +136,9 @@
                 <!-- Secondary Nav START -->
                 <div class="col s12">
                     <nav class="secondary-nav">
-                        <div class="nav-wrapper blue-grey darken-1">
+                        <div class="nav-wrapper blue-grey darken-1 hijau">
                             <ul class="left">
-                                <li class="waves-effect waves-light"><a href="?page=tsk&act=add" class="judul"><i class="material-icons">drafts</i> Tambah Data Surat Keluar</a></li>
+                                <li class="waves-effect waves-light hijau"><a href="?page=tsk&act=add" class="judul"><i class="material-icons">drafts</i> Tambah Data Surat Keluar</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -302,10 +302,10 @@
 
                     <div class="row">
                         <div class="col 6">
-                            <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">SIMPAN <i class="material-icons">done</i></button>
+                            <button type="submit" name="submit" class="btn-large blue waves-effect waves-light hijau">SIMPAN <i class="material-icons">done</i></button>
                         </div>
                         <div class="col 6">
-                            <a href="?page=tsk" class="btn-large deep-orange waves-effect waves-light">BATAL <i class="material-icons">clear</i></a>
+                            <a href="?page=tsk" class="btn-large deep-orange waves-effect waves-light hijau">BATAL <i class="material-icons">clear</i></a>
                         </div>
                     </div>
 
