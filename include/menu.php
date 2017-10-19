@@ -155,7 +155,7 @@
                 </ul>
             
             <?php
-                if($_SESSION['admin'] == 1){ ?>
+                if($_SESSION['admin'] == 1): ?>
             <li><a class="dropdown-button" href="#!" data-activates="pengaturan">Pengaturan <i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='pengaturan' class='dropdown-content'>
                     <li><a href="?page=sett">Instansi</a></li>
@@ -164,9 +164,7 @@
                   
                     
                 </ul>
-            <?php
-                }
-            ?>
+            <?php endif;?>
             <?php
                 if($_SESSION['admin'] == 2){ ?>
             <li><a class="dropdown-button" href="#!" data-activates="pengaturan">Pengaturan <i class="material-icons md-18">arrow_drop_down</i></a></li>
@@ -177,6 +175,13 @@
             <?php
                 }
             ?>
+
+
+            <?php if(isset($_SESSION["admin"])): ?>
+            <li><a href="grafik_surat.php">Grafik Surat</a>
+            <?php endif;?>
+
+
             <li class="right" style="margin-right: 10px;"><a class="dropdown-button" href="#!" data-activates="logout"><i class="material-icons">account_circle</i> <?php echo $_SESSION['nama']; ?><i class="material-icons md-18">arrow_drop_down</i></a></li>
                 <ul id='logout' class='dropdown-content'>
                     <li><a href="?page=pro">Profil</a></li>

@@ -69,7 +69,7 @@ $('.button-collapse').sideNav({
 });
 
 //jquery datepicker
-$('#tgl_surat,#batas_waktu,#dari_tanggal,#sampai_tanggal').pickadate({
+$('#tgl_surat,#batas_waktu,#dari_tanggal,#sampai_tanggal, #tgl_diterima').pickadate({
     selectMonths: true,
     selectYears: 10,
     format: "yyyy-mm-dd"

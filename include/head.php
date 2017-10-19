@@ -278,6 +278,259 @@
     </style>
     <!-- Global style END -->
 
+    <!-- added script by ramdan -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#form11").submit(function(event){
+
+                event.preventDefault();
+
+                var canvas_surat_bulan_masuk  = [];
+                var canvas_surat_bulan_keluar  = [];
+                var canvas_surat_masuk  = [];
+                var canvas_surat_keluar = [];
+
+                $.ajax({
+                    url: "chart_server.php",
+                    data: $(this).serialize(),
+                    success: function(response)
+                    {
+                        canvas_surat_bulan_masuk  = [];
+                        canvas_surat_bulan_keluar  = [];
+                        canvas_surat_masuk  = [];
+                        canvas_surat_keluar = [];
+
+                        if(response == "false")
+                        {
+                            alert("Data surat masuk ataupun surat keluar tidak ditemukan di tanggal ini");
+                        }
+
+                        var response = $.parseJSON(response);
+
+
+                        if(response.surat_masuk == "null")
+                        {
+                            alert("Surat Masuk Tidak Ada");
+                        }
+
+                        if(response.surat_keluar == "null")
+                        {
+                            alert("Surat Keluar Tidak Ada");
+                        }
+                        
+                        $.each(response.surat_masuk, function(index, value){
+                            canvas_surat_bulan_masuk.push(value.tgl_surat);
+                            canvas_surat_masuk.push(value.jumlah);
+                        })
+
+                        $.each(response.surat_keluar, function(index, value){
+                            canvas_surat_bulan_keluar.push(value.tgl_surat);
+                            canvas_surat_keluar.push(value.jumlah);
+                        })
+
+                        var canvas_data = new Chart($("#canvas_grafik_surat_masuk"), {
+                            type: 'bar',
+                            data: {
+                                labels: canvas_surat_bulan_masuk,
+                                datasets: [
+                                {
+                                    label: '# Jumlah surat masuk',
+                                    data: canvas_surat_masuk,
+                                    backgroundColor: [
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+
+                                    ],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)'
+                                    ],
+                                    borderWidth: 1
+                                }
+                                ]
+                            },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero:true
+                                            }
+                                        }]
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: "Grafik Data Surat Masuk Dalam 1 Bulan"
+                                    }
+                                }
+                        })
+
+                        var canvas_data2 = new Chart($("#canvas_grafik_surat_keluar"), {
+                            type: 'bar',
+                            data: {
+                                labels: canvas_surat_bulan_keluar,
+                                datasets: [
+                                {
+                                    label: '# Jumlah surat keluar',
+                                    data: canvas_surat_keluar,
+                                    backgroundColor: [
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+                                        'rgba(255, 100, 55, 0.2)',
+
+                                    ],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)',
+                                        'rgba(255,99,132,1)'
+                                    ],
+                                    borderWidth: 1
+                                }
+                                ]
+                            },
+                                    options: {
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero:true
+                                                }
+                                            }]
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: "Grafik Data Surat Keluar Dalam 1 Bulan"
+                                        }
+                                    }
+                        })
+
+                    }
+                })
+
+
+    })
+})
+    </script>
+    <!-- end added -->
+
 </head>
 
 <?php
