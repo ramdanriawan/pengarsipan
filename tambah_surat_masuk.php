@@ -10,14 +10,14 @@
 
             //validasi form kosong
             if($_REQUEST['no_agenda'] == "" || $_REQUEST['no_surat'] == "" || $_REQUEST['asal_surat'] == "" || $_REQUEST['isi'] == ""
-                || $_REQUEST['tgl_diterima'] == "" || $_REQUEST['indeks'] == "" || $_REQUEST['tgl_surat'] == ""  || $_REQUEST['keterangan'] == ""){
+                || $_REQUEST['tgl_diterima'] == "" || $_REQUEST['input'] == "" || $_REQUEST['tgl_surat'] == ""  || $_REQUEST['keterangan'] == ""){
                 $_SESSION['errEmpty'] = 'ERROR! Semua form wajib diisi';
                 echo '<script language="javascript">window.history.back();</script>';
             } else {
 
                 $no_agenda = $_REQUEST['no_agenda'];
-                $no_surat = $_REQUEST['no_surat'];
                 $asal_surat = $_REQUEST['asal_surat'];
+                $no_surat = $_REQUEST['no_surat'];
                 $isi = $_REQUEST['isi'];
                 $tgl_diterima = $_REQUEST['tgl_diterima'];
                 $input = $_REQUEST['input'];
@@ -46,7 +46,7 @@
                                 echo '<script language="javascript">window.history.back();</script>';
                             } else {
 
-                                if(!preg_match("/^[0-9.-]*$/", $ntgl_diterima)){
+                                if(!preg_match("/^[0-9.-]*$/", $tgl_diterima)){
                                     $_SESSION['tgl_diterima'] = 'Form tgl_diterima hanya boleh mengandung angka dan minus(-)';
                                     echo '<script language="javascript">window.history.back();</script>';
                                 } else {
@@ -115,8 +115,8 @@
                                                     } else {
 
                                                         //jika form file kosong akan mengeksekusi script dibawah ini
-                                                        $query = mysqli_query($config, "INSERT INTO tbl_surat_masuk(no_agenda,no_surat,asal_surat,isi,tgl_diterima,input,tgl_surat,keterangan,id_user)
-                                                            VALUES('$no_agenda','$no_surat','$asal_surat','$isi','$tgl_diterima','$input','$tgl_surat',NOW(),'$keterangan','$id_user')");
+                                                        $query = mysqli_query($config, "INSERT INTO tbl_surat_masuk(no_agenda,asal_surat,no_surat,isi,tgl_diterima,input,tgl_surat,keterangan,id_user)
+                                                            VALUES('$no_agenda','$asal_surat','$no_surat','$isi','$tgl_diterima','$input','$tgl_surat','$keterangan','$id_user')");
 
                                                         if($query == true){
                                                             $_SESSION['succAdd'] = 'SUKSES! Data berhasil ditambahkan';
@@ -235,10 +235,10 @@
                         </div>
                         <div class="input-field col s6 tooltipped" data-position="top" data-tooltip="Isi dengan huruf atau angka">
                             <i class="material-icons prefix md-prefix">people</i>
-                            <input id="indeks" type="text" class="validate" name="indeks" required>
+                            <input id="indeks" type="text" class="validate" name="input" required>
                                 <?php
                                     if(isset($_SESSION['input'])){
-                                        $input = $_SESSION['indeks'];
+                                        $input = $_SESSION['input'];
                                         echo '<div id="alert-message" class="callout bottom z-depth-1 red lighten-4 red-text">'.$input.'</div>';
                                         unset($_SESSION['input']);
                                     }
