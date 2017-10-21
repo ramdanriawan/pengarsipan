@@ -1,5 +1,6 @@
 <?php
     //cek session
+    error_reporting();
     if(empty($_SESSION['admin'])){
         $_SESSION['err'] = '<center>Anda harus login terlebih dahulu!</center>';
         header("Location: ./");
@@ -9,8 +10,8 @@
         if(isset($_REQUEST['submit'])){
 
             //validasi form kosong
-            if($_REQUEST['no_agenda'] == "" || $_REQUEST['no_surat'] == "" || $_REQUEST['tujuan'] == "" || $_REQUEST['isi'] == ""
-                || $_REQUEST['kode'] == "" || $_REQUEST['tgl_surat'] == ""  || $_REQUEST['keterangan'] == ""){
+            if($_REQUEST['no_agenda'] == "" ||  $_REQUEST['tujuan'] == "" ||  $_REQUEST['tgl_surat'] == "" || $_REQUEST['isi'] == ""  || $_REQUEST['no_surat'] == "" 
+                || $_REQUEST['kode'] == "" || $_REQUEST['keterangan'] == ""){
                 $_SESSION['errEmpty'] = 'ERROR! Semua form wajib diisi';
                 echo '<script language="javascript">window.history.back();</script>';
             } else {
@@ -107,7 +108,7 @@
                                                         echo '<script language="javascript">window.history.back();</script>';
                                                     }
                                                 } else {
-                                                    $query = mysqli_query($config, "INSERT INTO tbl_surat_keluar(no_agenda,tujuan,no_surat,isi,kode,tgl_surat,
+                                                    $query = mysqli_query($config, "INSERT INTO tbl_surat_keluar(no_agenda,tujuan,no_surat,isi,input,tgl_surat,
                                                         tgl_catat,keterangan,id_user)
                                                         VALUES('$no_agenda','$tujuan','$no_surat','$isi','$nkode','$tgl_surat',NOW(),'$keterangan','$id_user')");
 
@@ -186,7 +187,7 @@
                     <div class="row">
                         <div class="input-field col s6 tooltipped" data-position="top" data-tooltip="Isi dengan angka">
                             <i class="material-icons prefix md-prefix">looks_one</i>
-                            <input id="no_agenda" type="number" class="validate" name="no_agenda" required>
+                            <input id="no_agenda" type="number" class="validate" name="no_agenda" required min="1">
                                 <?php
                                     if(isset($_SESSION['no_agendak'])){
                                         $no_agendak = $_SESSION['no_agendak'];
@@ -197,8 +198,8 @@
                             <label for="no_agenda">Nomor Agenda</label>
                         </div>
                         <div class="input-field col s6 tooltipped" data-position="top" data-tooltip="Diambil dari data referensi kode klasifikasi">
-                            <i class="material-icons prefix md-prefix">bookmark</i>
-                            <input id="kode" type="text" class="validate" name="kode" required>
+                            <i class="material-icons prefix md-prefix">people</i>
+                            <input id="kode" type="text" class="validate" name="kode" required min="1">
                                 <?php
                                     if(isset($_SESSION['kodek'])){
                                         $kodek = $_SESSION['kodek'];
@@ -206,7 +207,7 @@
                                         unset($_SESSION['kodek']);
                                     }
                                 ?>
-                            <label for="kode">Kode Klasifikasi</label>
+                            <label for="kode">Di Inputkan Oleh</label>
                         </div>
                         <div class="input-field col s6">
                             <i class="material-icons prefix md-prefix">place</i>
