@@ -87,16 +87,16 @@
 
                                                             move_uploaded_file($_FILES['file']['tmp_name'], $target_dir.$nfile);
 
-                                                            $query = mysqli_query($config, "INSERT INTO tbl_surat_keluar(no_agenda,tujuan,no_surat,isi,kode,tgl_surat,
+                                                            $query = mysqli_query($config, "INSERT INTO tbl_surat_keluar(no_agenda,tujuan,no_surat,isi,input,tgl_surat,
                                                                 tgl_catat,file,keterangan,id_user)
-                                                                VALUES('$no_agenda','$tujuan','$no_surat','$isi','$nkode','$tgl_surat',NOW(),'$nfile','$keterangan','$id_user')");
+                                                                VALUES('$no_agenda','$tujuan','$no_surat','$isi','$input','$tgl_surat',NOW(),'$nfile','$keterangan','$id_user')");
 
                                                             if($query == true){
                                                                 $_SESSION['succAdd'] = 'SUKSES! Data berhasil ditambahkan';
                                                                 header("Location: ./admin.php?page=tsk");
                                                                 die();
                                                             } else {
-                                                                $_SESSION['errQ'] = 'ERROR! Ada masalah dengan query';
+                                                                $_SESSION['errQ'] = 'ERROR! Ada masalah dengan query' . mysqli_error($config);
                                                                 echo '<script language="javascript">window.history.back();</script>';
                                                             }
                                                         } else {

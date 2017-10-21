@@ -94,14 +94,14 @@
                                                                 move_uploaded_file($_FILES['file']['tmp_name'], $target_dir.$nfile);
 
                                                                 $query = mysqli_query($config, "INSERT INTO tbl_surat_masuk(no_agenda,no_surat,asal_surat,isi,tgl_diterima,input,tgl_surat,file,keterangan,id_user)
-                                                                        VALUES('$no_agenda','$no_surat','$asal_surat','$isi','$ntgl_diterima','$input','$tgl_surat',NOW(),'$nfile','$keterangan','$id_user')");
+                                                                        VALUES('$no_agenda','$no_surat','$asal_surat','$isi','$tgl_diterima','$input','$tgl_surat','$nfile','$keterangan','$id_user')");
 
                                                                 if($query == true){
                                                                     $_SESSION['succAdd'] = 'SUKSES! Data berhasil ditambahkan';
                                                                     header("Location: ./admin.php?page=tsm");
                                                                     die();
                                                                 } else {
-                                                                    $_SESSION['errQ'] = 'ERROR! Ada masalah dengan query';
+                                                                    $_SESSION['errQ'] = 'ERROR! Ada masalah dengan query' . mysqli_error($config) . NOW();
                                                                     echo '<script language="javascript">window.history.back();</script>';
                                                                 }
                                                             } else {
